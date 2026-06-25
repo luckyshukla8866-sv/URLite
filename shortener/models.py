@@ -9,7 +9,9 @@ class ShortenedURL(models.Model):
     
     # The unique 6-character code. db_index=True makes database searches incredibly fast!
     short_code = models.CharField(max_length=10, unique=True, db_index=True)
-    
+
+    custom_alias = models.CharField(max_length=15, null=True, blank=True, unique=True)
+    expires_at = models.DateTimeField(null=True, blank=True)
     # Analytics tracking
     click_count = models.IntegerField(default=0)
     

@@ -7,7 +7,7 @@ def generate_short_code():
     
     # We import the model inside the function to avoid circular import issues in Django
     from .models import ShortenedURL
-    
+   
     while True:
         # 1. Pick 6 random characters and join them into a string
         code = ''.join(random.choices(characters, k=6))
